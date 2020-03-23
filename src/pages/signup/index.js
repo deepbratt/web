@@ -24,13 +24,12 @@ export default class Signup extends Component{
             axios.post("http://localhost:4000/api/users", { firstName, lastName, phone, email, userPassword } )
             .then(result => this.setState({
                     loading: false,
-                    isSignedUp: true,
-                    userData: result.data         
+                    isSignedUp: true       
                 })
             );
         });
-
     }
+    
     render(){
         const {loading, isSignedUp} = this.state;
         return(

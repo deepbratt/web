@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch ,Route } from "react-router-dom";
 import Login from './pages/login';
 import Signup from './pages/signup';
+import Dashboard from './pages/dashboard';
 export default function Routes() {
     return (
         <Switch>
@@ -21,11 +22,4 @@ export default function Routes() {
     );
 }
 
-  function Dashboard() {
-    return (
-      <div>
-        <h2>Dashboard</h2>
-      </div>
-    );
-  }
   
