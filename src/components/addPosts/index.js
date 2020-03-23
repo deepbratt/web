@@ -4,24 +4,18 @@ import axios from 'axios';
 const cookies = new Cookies ();
 
 export default function AddPosts () {
-    const token = useState (cookies.get ('Token'));
+    const token = cookies.get ('Token');
     const [post, setPost] = useState('');
     const [title, setTitle] = useState('');
+    const [success, setSuccess] = useState(false);
+    
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(title);
-        console.log(post);
-        /*this.setState({ loading: true }, () => {    
-            axios.post("http://localhost:4000/api/users/auth", { email, userPassword } )
-            .then(result => {          
-                    this.setState({
-                        loading: false,
-                        isLoggedIn: !result.data ? false : true,
-                        userData: result.data._id         
-                    })
-                }   
-            );
-        });*/
+        axios.post("http://localhost:4000/api/posts", { title:title, description:post , userId: token} )
+        .then(result => 
+            setSuccess(true)
+        );
+
     }
  
     const handleChange = (event) => {
@@ -32,7 +26,14 @@ export default function AddPosts () {
     }
   return (
     <Fragment>
-            <form>
+            {(success)
+            ? 
+            <p className="alert alert-success"> data posted succesfully </p>
+            :
+            ''
+            }
+
+            <form onSubmit={onSubmit}>
                 <div
                     className="media mt-3"
                     key={1}
