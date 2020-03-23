@@ -37,9 +37,9 @@ export default function Sidebar () {
                 <li className="list-group-item"> {userData.email} </li>
                 <li className="list-group-item"> {userData.firstName} </li>
                 <li className="list-group-item">
-                  <span href="#/" alt="logout" className="btn btn-primary">
+                  <a href="/logout" alt="logout" className="btn btn-primary">
                     Logout
-                  </span>
+                  </a>
                 </li>
               </ul>
             </div>

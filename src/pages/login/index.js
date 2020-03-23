@@ -51,7 +51,7 @@ export default class Login extends Component{
         if(isLoggedIn){
             return this.finalLogin();
         }
-        console.log(this.state.isLoggedIn);
+        //console.log(this.state.isLoggedIn);
         return(
             <div className="container">
                 <div className="row mt-5">
